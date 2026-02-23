@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog Articles - Try Django{% endblock %}
+
+{% block content %}
+<section class="articles-container section">
+  <div>
+    <h1 style="margin-bottom: var(--spacing-lg);">Blog Articles</h1>
+    <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-2xl);">
+      Explore our latest articles and insights
+    </p>
+  </div>
+
+  {% if articles %}
+    <div class="articles-grid">
+      {% for article in articles %}
+        <a href="{{article.get_details_url}}" class="article-card">
+          <div class="article-card-content">
+            <div class="article-card-header">
+              <h2 class="article-card-title">{{ article.title }}</h2>
+              <p class="article-card-subtitle">{{ article.summary }}</p>
+            </div>
+
+            <div class="article-card-body">
+              <p class="article-card-excerpt">
+                {{article.description|truncatechars:150}}
+              </p>
+            </div>
+
+            <div class="article-card-footer">
+              <div class="article-card-meta">
+                <span class="article-card-date">
+                  {{ article.timestamp|date:"M d, Y" }}
+                </span>
+                <span class="badge badge-primary">Read More →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="articles-empty">
+      <div class="articles-empty-icon">📝</div>
+      <p class="articles-empty-text">No articles found</p>
+      <p style="color: var(--color-text-light);">Check back soon for new content!</p>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

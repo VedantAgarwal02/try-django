@@ -1,0 +1,220 @@
+/* 
+ * Contact Page Styling
+ * Styles for the contact form and contact information section
+ */
+
+/* Contact Section */
+.contact-section {
+  animation: fadeIn var(--transition-slow);
+}
+
+.contact-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.contact-header h1 {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-base);
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+}
+
+.form-control {
+  padding: var(--spacing-base);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-control:hover:not(:focus) {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-control-textarea {
+  resize: vertical;
+  min-height: 150px;
+  line-height: var(--line-height-relaxed);
+}
+
+.form-error {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.form-actions {
+  margin-top: var(--spacing-lg);
+}
+
+.form-actions .btn {
+  transition: all var(--transition-base);
+}
+
+.form-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Alert Messages */
+.alert {
+  padding: var(--spacing-base) var(--spacing-lg);
+  border-radius: var(--radius-base);
+  margin-top: var(--spacing-base);
+  animation: slideDown var(--transition-base);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error,
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Contact Info Cards */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+.contact-info-card {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.contact-info-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.contact-info-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-base);
+  display: block;
+}
+
+.contact-info-card h3 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  margin: var(--spacing-base) 0 var(--spacing-sm) 0;
+}
+
+.contact-info-card p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  margin-bottom: 0;
+}
+
+/* Focus States for Accessibility */
+.form-control:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    gap: var(--spacing-md);
+  }
+
+  .form-group {
+    gap: var(--spacing-sm);
+  }
+
+  .card {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .form-control {
+    padding: var(--spacing-sm) var(--spacing-base);
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+}

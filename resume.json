@@ -1,0 +1,69 @@
+{
+  "name": "Vedant Agarwal",
+  "email": "agarwalvedant02@gmail.com",
+  "phone": "+91-7017696675",
+  "linkedin": "linkedin.com/in/vedant-agarwal-a58a92200",
+  "location": "Gurugram, Haryana",
+  "summary": "Full Stack Engineer with expertise in building scalable web applications using modern technologies",
+  
+  "education": [
+    {
+      "institution": "JSS Academy of Technical Education",
+      "degree": "Bachelor of Technology (Computer Science)",
+      "duration": "Oct 2020 - June 2024",
+      "gpa": "8.34 CGPA",
+      "coursework": ["Operating System", "Database Management System", "Data Structures and Algorithms", "Object Oriented Programming"]
+    }
+  ],
+  
+  "experience": [
+    {
+      "company": "Xperium By Repup",
+      "position": "Full Stack Engineer",
+      "duration": "Aug 2024 - Present",
+      "location": "Gurugram, Haryana",
+      "achievements": [
+        "Integrated CC Avenue and Razorpay payment gateways following industry best practices to deliver a seamless and frictionless payment experience for end users.",
+        "Implemented a MongoDB aggregation pipeline for status filters in Marketing Lists to optimize the management of email records and minimize DM calls.",
+        "Integrated Msg91 WhatsApp services with editable message templates in the Guest Journey module and developed a cloud function to capture delivered/read status updates.",
+        "Built backend REST API to track user link clicks with redirection, and displayed delivered, read, and click analytics in campaign dashboards.",
+        "Optimized the Review Scraping System (APIFY, Selenium, GCP) by eliminating redundant scraping operations, resulting in 20% cost reduction on GCP."
+      ]
+    },
+    {
+      "company": "Kavitech Pvt. Ltd.",
+      "position": "Frontend Intern",
+      "duration": "Mar 2024 - May 2024",
+      "location": "Dwarka, New Delhi",
+      "achievements": [
+        "Enhanced the interface for seamless data management, boosting responsiveness and efficiency in legacy AngularJS front-end.",
+        "Conducted extensive testing across multiple modules, ensuring system reliability, data accuracy, and minimizing potential disruptions to end-users."
+      ]
+    }
+  ],
+  
+  "projects": [
+    {
+      "title": "Notes Portal",
+      "link": "GitHub Repo",
+      "description": "Launched a unified online platform for AKTU students, featuring student-uploaded notes from more than 5 colleges across the university",
+      "achievements": [
+        "Collaborated with a teammate on GitHub, cutting development time by 50 percent and boosting project efficiency"
+      ]
+    },
+    {
+      "title": "Jobs Portal",
+      "link": "GitHub Repo",
+      "description": "Created a user-friendly recruiter dashboard for effortless job posting, editing, and removal.",
+      "achievements": [
+        "Employed the MERN stack to facilitate efficient and seamless collaboration between the frontend and backend components."
+      ]
+    }
+  ],
+  
+  "technologies": {
+    "languages": ["Python", "Typescript", "Javascript", "SQL", "NoSQL", "C/C++"],
+    "frameworks": ["Flask", "React.js", "Node.js", "Angular", "Selenium", "Playwright"],
+    "tools": ["Git/Github", "Postman", "Docker", "AWS", "GCP", "Apify"]
+  }
+}

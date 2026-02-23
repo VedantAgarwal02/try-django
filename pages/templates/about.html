@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ resume.name }} - Resume{% endblock %}
+
+{% block content %}
+<section class="resume-section section-lg">
+  <div class="container-sm">
+    
+    <!-- Header -->
+    <div class="resume-header">
+      <div class="resume-title-block">
+        <h1 class="resume-name">{{ resume.name }}</h1>
+        <p class="resume-title" style="color: var(--color-secondary); font-size: var(--font-size-lg);">Full Stack Engineer</p>
+      </div>
+
+      <div class="resume-contact-info">
+        <a href="mailto:{{ resume.email }}" class="contact-link">
+          <span>📧</span> {{ resume.email }}
+        </a>
+        <a href="tel:{{ resume.phone }}" class="contact-link">
+          <span>📱</span> {{ resume.phone }}
+        </a>
+        <a href="https://{{ resume.linkedin }}" target="_blank" class="contact-link">
+          <span>🔗</span> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <section class="resume-section-block">
+      <h2 class="resume-section-title">Education</h2>
+      
+      {% for edu in resume.education %}
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3 class="resume-item-title">{{ edu.institution }}</h3>
+            <span class="resume-duration">{{ edu.duration }}</span>
+          </div>
+          
+          <p class="resume-item-subtitle">
+            {{ edu.degree }}
+            <span class="resume-gpa">GPA: {{ edu.gpa }}</span>
+          </p>
+          
+          <p class="resume-coursework">
+            <strong>Coursework:</strong> {{ edu.coursework|join:", " }}
+          </p>
+        </div>
+      {% endfor %}
+    </section>
+
+    <!-- Experience Section -->
+    <section class="resume-section-block">
+      <h2 class="resume-section-title">Experience</h2>
+      
+      {% for exp in resume.experience %}
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3 class="resume-item-title">{{ exp.company }}</h3>
+            <span class="resume-duration">{{ exp.duration }}</span>
+          </div>
+          
+          <p class="resume-item-subtitle">
+            {{ exp.position }} • <span class="resume-location">{{ exp.location }}</span>
+          </p>
+          
+          <ul class="resume-achievements">
+            {% for achievement in exp.achievements %}
+              <li class="achievement-item">{{ achievement }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </section>
+
+    <!-- Projects Section -->
+    <section class="resume-section-block">
+      <h2 class="resume-section-title">Projects</h2>
+      
+      {% for project in resume.projects %}
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <h3 class="resume-item-title">{{ project.title }}</h3>
+            <a href="#" class="project-link">{{ project.link }}</a>
+          </div>
+          
+          <p class="project-description">{{ project.description }}</p>
+          
+          <ul class="resume-achievements">
+            {% for achievement in project.achievements %}
+              <li class="achievement-item">{{ achievement }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="resume-section-block">
+      <h2 class="resume-section-title">Technologies</h2>
+      
+      <div class="tech-grid">
+        <div class="tech-category">
+          <h4 class="tech-category-title">Languages</h4>
+          <div class="tech-tags">
+            {% for lang in resume.technologies.languages %}
+              <span class="tech-tag">{{ lang }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4 class="tech-category-title">Frameworks & Libraries</h4>
+          <div class="tech-tags">
+            {% for framework in resume.technologies.frameworks %}
+              <span class="tech-tag">{{ framework }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h4 class="tech-category-title">Tools & Platforms</h4>
+          <div class="tech-tags">
+            {% for tool in resume.technologies.tools %}
+              <span class="tech-tag">{{ tool }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <div class="resume-actions" style="margin-top: var(--spacing-2xl); text-align: center;">
+      <button class="btn btn-primary" onclick="window.print()">
+        📄 Download Resume
+      </button>
+    </div>
+  </div>
+</section>
+{% endblock %}

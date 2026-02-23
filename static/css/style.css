@@ -1,0 +1,18 @@
+/* 
+ * Main Style File
+ * Imports all CSS modules in correct order
+ */
+
+/* 1. Design System Variables */
+@import url('./variables.css');
+
+/* 2. Global Base Styles */
+@import url('./base.css');
+
+/* 3. Reusable Components */
+@import url('./components.css');
+
+/* 4. App-Specific Styles */
+@import url('./blogs/articles.css');
+@import url('./pages/contact.css');
+@import url('./pages/resume.css');

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }} - Blog{% endblock %}
+
+{% block content %}
+<article class="article-detail section" style="padding-top: 20px;">
+  <div class="article-actions" style="margin-bottom: var(--spacing-lg); padding-top:0px; border: none;">
+    <a href="{{ article.get_list_url }}" class="article-back-link">
+      Back to Articles
+    </a>
+  </div>
+
+  <div class="article-detail-header">
+    <h1 class="article-detail-title">{{ article.title }}</h1>
+    
+    <div class="article-detail-meta" style="margin-top: var(--spacing-md);">
+      <div class="article-detail-meta-item">
+        <span>📅 Published:</span>
+        <strong>{{ article.timestamp|date:"F d, Y" }}</strong>
+      </div>
+      <div class="article-detail-meta-item">
+        <span>⏱️ Read Time:</span>
+        <strong>5 min read</strong>
+      </div>
+    </div>
+  </div>
+
+  {% if article.summary %}
+    <div class="article-detail-subtitle">
+      {{ article.summary }}
+    </div>
+  {% endif %}
+
+  <div class="article-detail-body">
+    {{ article.description }}
+  </div>
+
+  <!-- <div class="article-actions">
+    <a href="{{ article.get_list_url }}" class="article-back-link">
+      Back to Articles
+    </a>
+  </div> -->
+</article>
+{% endblock %}
